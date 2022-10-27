@@ -1,0 +1,37 @@
+
+
+<div class="card" style="width: 18 rem;">
+  <div style="background-image: url('./assets/design-space-paper-textured-background.jpg') ;
+  background-repeat: no-repeat;
+  background-size: cover;">
+    <div class="card-body">
+
+        <h5 class="card-title text-center">ToDo List</h5>
+    
+
+
+    <form class="form-inline">
+        <input type="text" readonly class="form-control-plaintext mb-2 mr-sm-2"  value="What do you want to do?">
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">ToDo</div>
+          </div>
+          <input type="text" name = "inputTodo" class="form-control"  placeholder="Enter todo..." [(ngModel)]="inputTodo">
+        </div>
+        <button type="submit" (click)="addTodo()" class="btn btn-primary mb-2">Add ToDo</button>
+      </form>
+        
+
+          
+        
+   
+      <label for="ToDos">Your Todos.</label>
+      <div class="form-group" style="height: 500px; overflow-y:auto">
+        
+        <div  *ngFor="let todo of todos; ">
+            <app-todo class="form-control" [todo]="todo" (OnEditTodo)="edit($event)" (done)="toggleDone($event)" (delete)="deleteTodos($event)"></app-todo> 
+        </div>
+
+
+    
+

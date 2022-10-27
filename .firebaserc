@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "todosapp-d1c11": {
+      "hosting": {
+        "To_Do_List": [
+          "todosapp-d1c11"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "todosapp-d1c11"
+  }
+}
