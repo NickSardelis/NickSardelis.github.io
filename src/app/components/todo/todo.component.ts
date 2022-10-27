@@ -23,13 +23,8 @@ export class TodoComponent {
   
  deleteTodo(id) {
   this.delete.emit(id)
-
   }
  
-
-
-
-
 
   editTodo (id: number) {
    if(this.showEdit){
@@ -37,8 +32,5 @@ export class TodoComponent {
    }
    this.showEdit=!this.showEdit
    this.EditTodo=this.todo.content
-  
   }
-
-
 }
