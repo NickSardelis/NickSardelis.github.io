@@ -12,6 +12,7 @@ export class TodoComponent {
 
   @Output() OnEditTodo= new EventEmitter()
   @Output() done = new EventEmitter()
+  @Output() undone = new EventEmitter()
   @Output() delete = new EventEmitter()
   
   
@@ -21,9 +22,9 @@ export class TodoComponent {
     } 
 
   
- deleteTodo(id) {
-  this.delete.emit(id)
-  }
+  deleteTodo(id) {
+   this.delete.emit(id)
+   }
  
 
   editTodo (id: number) {

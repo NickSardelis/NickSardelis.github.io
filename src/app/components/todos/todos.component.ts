@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import {Todo, idname}  from './../../models/Todo'
-import { AngularFirestore } from "@angular/fire/compat/firestore";
+import { AngularFirestore, docChanges } from "@angular/fire/compat/firestore";
 import { Subscription } from 'rxjs';
 import { TodoComponent } from '../todo/todo.component';
 
@@ -17,7 +17,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   inputTodo:string = "";
   EditTodo:string = "";
   showEdit:boolean = false;
-
+  alter:boolean = false
   constructor(private db: AngularFirestore) { }
 
   ngOnInit(): void {
@@ -41,10 +41,11 @@ export class TodosComponent implements OnInit, OnDestroy {
   
   toggleDone(id) {
       this.db.collection('todos').doc(id).update({
-        completed : true 
+        completed: this.alter =!this.alter
       })
     }
-            
+ 
+                 
   
 
   deleteTodos (id) {
